@@ -34,7 +34,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 " Latex
 Plug 'lervag/vimtex'
 
-" File Explorer
+" File tree
 Plug 'https://github.com/preservim/nerdtree'
 
 " Automatic brackets and quotes
@@ -74,7 +74,11 @@ let g:equinusocio_material_style = 'pure' "default, dark, darker, pure
 let g:airline_theme='equinusocio_material'
 colorscheme equinusocio_material 
 
-" Automatically displays all buffers when there's only one tab open
+" Automatically open Tagbar
+" This does not work reliably
+" autocmd BufEnter,BufNewFile *.{cpp,c,h,hpp,v,tex,py} :Tagbar
+
+"Automatically displays all buffers when there's only one tab open
 let g:airline#extensions#tabline#enabled=1
 
 " Statusbar
@@ -93,14 +97,15 @@ set makeprg=make\ -j9
 
 " Keybindings
 nmap <F4> :make<cr> 
-nmap <F1> :TagbarToggle<cr>
-nmap <F2> :NERDTreeToggle<cr>
+nmap <F2> :TagbarToggle<cr>
+nmap <F1> :NERDTreeToggle<cr>
 
 " set zathura as pdf viewer
 let g:vimtex_view_method='zathura'
 
-" Highlight row
-:set cursorline
+" Highlight row and column (for indentation)
+:set cursorline cursorcolumn
 
 " Enable mouse drag on window split
 set mouse=a
+
