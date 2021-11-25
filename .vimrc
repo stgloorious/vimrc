@@ -43,6 +43,10 @@ Plug 'itmammoth/doorboy.vim'
 " lists functions, classes, methods
 Plug 'https://github.com/preservim/tagbar'
 
+" Indentation level highlight
+" Works only with spaces
+Plug 'https://github.com/Yggdroot/indentLine'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -50,6 +54,9 @@ call plug#end()
 " Enable filetype base syntax highlighting
 filetype plugin indent on
 syntax enable
+
+" Indentation level highlight for tabs
+set list lcs=tab:\|\ 
 
 " Enable C/C++ Formatting on save
 let g:clang_format#auto_format = 1
