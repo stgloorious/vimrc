@@ -45,7 +45,7 @@ Plug 'https://github.com/preservim/tagbar'
 
 " Indentation level highlight
 " Works only with spaces
-Plug 'https://github.com/Yggdroot/indentLine'
+" Plug 'https://github.com/Yggdroot/indentLine'
 
 call plug#end()
 
@@ -61,6 +61,18 @@ set list lcs=tab:\│\
 
 " Enable C/C++ Formatting on save
 let g:clang_format#auto_format = 1
+
+" Only format diff lines
+let g:clang_format#auto_format_git_diff = 1
+
+" Always use tabs for indentation
+" See here: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+let g:clang_format#style_options = {
+			\ 'UseTab' : 'Always',
+			\ 'BasedOnStyle' : 'Google',
+			\ 'TabWidth' : 2,
+			\ }
+
 
 " Terminal-specific quirk
 " Make termguicolors work in st
