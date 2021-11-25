@@ -56,7 +56,8 @@ filetype plugin indent on
 syntax enable
 
 " Indentation level highlight for tabs
-set list lcs=tab:\|\ 
+" Note that │ is different from |
+set list lcs=tab:\│\  
 
 " Enable C/C++ Formatting on save
 let g:clang_format#auto_format = 1
