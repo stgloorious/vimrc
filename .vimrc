@@ -50,10 +50,41 @@ Plug 'https://github.com/preservim/tagbar'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
+" Set Theme
+" Be aware that this should be on top,
+" because otherwise it will overwrite 
+" other things like spell highlighting 
+set termguicolors
+let g:equinusocio_material_style = 'pure' "default, dark, darker, pure
+let g:airline_theme='equinusocio_material'
+colorscheme equinusocio_material 
 
 " Enable filetype base syntax highlighting
 filetype plugin indent on
 syntax enable
+
+" Spelling for .tex files 
+augroup texSpell
+	autocmd!
+	autocmd FileType tex setlocal spell
+	autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us
+	:hi SpellBad cterm=bold ctermfg=red
+augroup END
+
+
+" Terminal-specific quirk
+" Make termguicolors work in st
+" https://stackoverflow.com/questions/62702766/termguicolors-in-vim-makes-everything-black-and-white 
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" To display the fancy symbols I used a pre-patched font 
+" from here:
+" https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
+" This is used is set for use in st
+
+" Enable fancy symbols
+let g:airline_powerline_fonts=1
 
 " Indentation level highlight for tabs
 " Note that │ is different from |
@@ -72,27 +103,6 @@ let g:clang_format#style_options = {
 			\ 'BasedOnStyle' : 'Google',
 			\ 'TabWidth' : 2,
 			\ }
-
-
-" Terminal-specific quirk
-" Make termguicolors work in st
-" https://stackoverflow.com/questions/62702766/termguicolors-in-vim-makes-everything-black-and-white 
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-" To display the fancy symbols I used a pre-patched font 
-" from here:
-" https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
-" This is used is set for use in st
-
-" Enable fancy symbols
-let g:airline_powerline_fonts=1
-
-" Set Theme
-set termguicolors
-let g:equinusocio_material_style = 'pure' "default, dark, darker, pure
-let g:airline_theme='equinusocio_material'
-colorscheme equinusocio_material 
 
 " Automatically open Tagbar
 " This does not work reliably
