@@ -47,6 +47,12 @@ Plug 'https://github.com/preservim/tagbar'
 " Works only with spaces
 " Plug 'https://github.com/Yggdroot/indentLine'
 
+" Debugger
+Plug 'https://github.com/cpiger/NeoDebug'
+
+" Log highlight
+Plug 'mtdl9/vim-log-highlighting'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -71,7 +77,6 @@ augroup texSpell
 	:hi SpellBad cterm=bold ctermfg=red
 augroup END
 
-
 " Terminal-specific quirk
 " Make termguicolors work in st
 " https://stackoverflow.com/questions/62702766/termguicolors-in-vim-makes-everything-black-and-white 
@@ -91,7 +96,7 @@ let g:airline_powerline_fonts=1
 set list lcs=tab:\│\  
 
 " Enable C/C++ Formatting on save
-let g:clang_format#auto_format = 1
+"let g:clang_format#auto_format = 1
 
 " Only format diff lines
 let g:clang_format#auto_format_git_diff = 1
