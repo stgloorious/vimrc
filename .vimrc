@@ -127,6 +127,10 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Use spaces instead of tabs for assembly
+au BufEnter *.s set expandtab
+au BufEnter *.asm set expandtab
+
 " Building
 set makeprg=make\ -j9
 
