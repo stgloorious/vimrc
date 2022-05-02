@@ -65,6 +65,10 @@ let g:equinusocio_material_style = 'pure' "default, dark, darker, pure
 let g:airline_theme='equinusocio_material'
 colorscheme equinusocio_material 
 
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+highlight Normal guibg=NONE
+
 " Enable filetype base syntax highlighting
 filetype plugin indent on
 syntax enable
@@ -90,6 +94,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Enable fancy symbols
 let g:airline_powerline_fonts=1
+
+" Disable mouse wheel
+set mouse=""
 
 " Indentation level highlight for tabs
 " Note that │ is different from |
@@ -127,6 +134,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Use spaces instead of tabs
+set expandtab
+" makes this vvvvvvvvvv unnecessary
 " Use spaces instead of tabs for assembly
 au BufEnter *.s set expandtab
 au BufEnter *.asm set expandtab
@@ -148,3 +158,8 @@ let g:vimtex_view_method='zathura'
 " Enable mouse drag on window split
 set mouse=a
 
+" NeoDebug GDB
+let g:neodbg_keymap_toggle_console_win = '<F3>'
+let g:neodbg_debugger = 'gdb'
+let g:neodbg_gdb_path = 'usr/bin/riscv64-unknown-linux-gnu-gdb'
+let g:neodbg_openregisters_default = 1
