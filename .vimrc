@@ -174,3 +174,6 @@ let g:neodbg_keymap_toggle_console_win = '<F3>'
 let g:neodbg_debugger = 'gdb'
 let g:neodbg_gdb_path = 'usr/bin/riscv64-unknown-linux-gnu-gdb'
 let g:neodbg_openregisters_default = 1
+
+" Highlight 80th column
+set colorcolumn=80
