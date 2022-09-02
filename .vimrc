@@ -87,6 +87,12 @@ augroup END
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+" Scrolling
+" st specific hack
+if &term =~ '^st\($\|-\)'
+  set ttymouse=sgr
+endif
+
 " To display the fancy symbols I used a pre-patched font 
 " from here:
 " https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
@@ -100,13 +106,14 @@ set mouse=""
 
 " Indentation level highlight for tabs
 " Note that │ is different from |
-set list lcs=tab:\│\  
+" set list lcs=tab:\│\  
 
 " Enable C/C++ Formatting on save
-"let g:clang_format#auto_format = 1
+" let g:clang_format#auto_format = 1
 
 " Only format diff lines
-let g:clang_format#auto_format_git_diff = 1
+" let g:clang_format#auto_format_git_diff = 1
+" I found this to not work reliably
 
 " Always use tabs for indentation
 " See here: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
@@ -115,6 +122,10 @@ let g:clang_format#style_options = {
 			\ 'BasedOnStyle' : 'Google',
 			\ 'TabWidth' : 2,
 			\ }
+
+" Disable ycm asking every time for conf file
+let g:ycm_confirm_extra_conf = 0
+" Potentially dangerous: read documentation!
 
 " Automatically open Tagbar
 " This does not work reliably
