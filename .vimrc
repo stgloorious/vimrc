@@ -120,7 +120,7 @@ set mouse=""
 let g:clang_format#style_options = {
 			\ 'UseTab' : 'Always',
 			\ 'BasedOnStyle' : 'Google',
-			\ 'TabWidth' : 2,
+			\ 'TabWidth' : 8,
 			\ }
 
 " Disable ycm asking every time for conf file
@@ -141,9 +141,9 @@ set laststatus=2
 set number
 
 " Tab sizes
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 
 " Use spaces instead of tabs
 set expandtab
