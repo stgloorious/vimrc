@@ -53,6 +53,9 @@ Plug 'https://github.com/cpiger/NeoDebug'
 " Log highlight
 Plug 'mtdl9/vim-log-highlighting'
 
+" ctags management
+Plug 'https://github.com/ludovicchabant/vim-gutentags'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -109,10 +112,10 @@ set mouse=""
 " set list lcs=tab:\│\  
 
 " Enable C/C++ Formatting on save
-" let g:clang_format#auto_format = 1
+  let g:clang_format#auto_format = 1
 
 " Only format diff lines
-" let g:clang_format#auto_format_git_diff = 1
+  let g:clang_format#auto_format_git_diff = 1
 " I found this to not work reliably
 
 " Always use tabs for indentation
