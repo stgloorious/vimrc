@@ -56,6 +56,9 @@ Plug 'mtdl9/vim-log-highlighting'
 " ctags management
 Plug 'https://github.com/ludovicchabant/vim-gutentags'
 
+" Github copilot
+Plug 'https://github.com/github/copilot.vim'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
