@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/stefan/Documents/Hobby/Software/Anderes/vimrc/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+<F1>	.vimrc	/^nmap <F1> :NERDTreeToggle<cr>$/;"	m
+<F2>	.vimrc	/^nmap <F2> :TagbarToggle<cr>$/;"	m
+<F4>	.vimrc	/^nmap <F4> :make<cr>$/;"	m
+Installation	README.md	/^## Installation$/;"	s	chapter:vimrc
+Remarks	README.md	/^## Remarks$/;"	s	chapter:vimrc
+g:airline#extensions#tabline#enabled	.vimrc	/^let g:airline#extensions#tabline#enabled=1$/;"	v
+g:airline_extensions	.vimrc	/^let g:airline_extensions = []$/;"	v
+g:airline_highlighting_cache	.vimrc	/^let g:airline_highlighting_cache = 1$/;"	v
+g:airline_powerline_fonts	.vimrc	/^let g:airline_powerline_fonts=1$/;"	v
+g:airline_theme	.vimrc	/^let g:airline_theme='equinusocio_material'$/;"	v
+g:clang_format#auto_format	.vimrc	/^  let g:clang_format#auto_format = 0$/;"	v
+g:clang_format#auto_format_git_diff	.vimrc	/^  let g:clang_format#auto_format_git_diff = 1$/;"	v
+g:clang_format#style_options	.vimrc	/^let g:clang_format#style_options = {$/;"	v
+g:equinusocio_material_style	.vimrc	/^let g:equinusocio_material_style = 'pure' "default, dark, darker, pure$/;"	v
+g:vimtex_view_method	.vimrc	/^let g:vimtex_view_method='zathura'$/;"	v
+g:ycm_confirm_extra_conf	.vimrc	/^let g:ycm_confirm_extra_conf = 0$/;"	v
+gd	.vimrc	/^nmap gd :bdelete<cr>$/;"	m
+gn	.vimrc	/^nmap gn :bnext<cr>$/;"	m
+gp	.vimrc	/^nmap gp :bprevious<cr>$/;"	m
+texSpell	.vimrc	/^augroup texSpell$/;"	a
+vimrc	README.md	/^# vimrc$/;"	c

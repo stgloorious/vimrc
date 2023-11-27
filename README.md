@@ -10,4 +10,4 @@ My personal configuration file for vim
 4. Enjoy
 
 ## Remarks
-I use dwm as window manager and st as terminal. For the powerline fonts I use prepatched DejaVuSansMono.
+I use sway as window manager and alacritty as terminal emulator.
