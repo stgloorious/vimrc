@@ -43,10 +43,6 @@ Plug 'itmammoth/doorboy.vim'
 " lists functions, classes, methods
 Plug 'https://github.com/preservim/tagbar'
 
-" Indentation level highlight
-" Works only with spaces
-" Plug 'https://github.com/Yggdroot/indentLine'
-
 " Debugger
 Plug 'https://github.com/cpiger/NeoDebug'
 
@@ -56,20 +52,23 @@ Plug 'mtdl9/vim-log-highlighting'
 " ctags management
 Plug 'https://github.com/ludovicchabant/vim-gutentags'
 
+" wayland clipboard
+Plug 'https://github.com/jasonccox/vim-wayland-clipboard.git'
+
 " Github copilot
-Plug 'https://github.com/github/copilot.vim'
+"Plug 'https://github.com/github/copilot.vim'
 
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
 " Set Theme
 " Be aware that this should be on top,
-" because otherwise it will overwrite 
-" other things like spell highlighting 
+" because otherwise it will overwrite
+" other things like spell highlighting
 set termguicolors
 let g:equinusocio_material_style = 'pure' "default, dark, darker, pure
 let g:airline_theme='equinusocio_material'
-colorscheme equinusocio_material 
+colorscheme equinusocio_material
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
@@ -79,7 +78,7 @@ highlight Normal guibg=NONE
 filetype plugin indent on
 syntax enable
 
-" Spelling for .tex files 
+" Spelling for .tex files
 augroup texSpell
 	autocmd!
 	autocmd FileType tex setlocal spell
@@ -87,35 +86,28 @@ augroup texSpell
 	:hi SpellBad cterm=bold ctermfg=red
 augroup END
 
-" Terminal-specific quirk
-" Make termguicolors work in st
-" https://stackoverflow.com/questions/62702766/termguicolors-in-vim-makes-everything-black-and-white 
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-" Scrolling
-" st specific hack
-if &term =~ '^st\($\|-\)'
-  set ttymouse=sgr
-endif
-
-" To display the fancy symbols I used a pre-patched font 
-" from here:
-" https://github.com/powerline/fonts/blob/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
-" This is used is set for use in st
-
 " Enable fancy symbols
 let g:airline_powerline_fonts=1
+
+" Some airline optimizations
+let g:airline_extensions = []
+let g:airline_highlighting_cache = 1
 
 " Disable mouse wheel
 set mouse=""
 
-" Indentation level highlight for tabs
-" Note that │ is different from |
-" set list lcs=tab:\│\  
+" Show tabs
+set list lcs=tab:-->
+
+" Show spaces as dots
+set list lcs+=space:·
+
+" Highlight extra white space
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
 
 " Enable C/C++ Formatting on save
-  let g:clang_format#auto_format = 1
+  let g:clang_format#auto_format = 0
 
 " Only format diff lines
   let g:clang_format#auto_format_git_diff = 1
@@ -135,7 +127,7 @@ let g:ycm_confirm_extra_conf = 0
 
 " Automatically open Tagbar
 " This does not work reliably
-" autocmd BufEnter,BufNewFile *.{cpp,c,h,hpp,v,tex,py} :Tagbar
+autocmd BufEnter,BufNewFile *.{cpp,c,h,hpp,v,tex,py} :Tagbar
 
 "Automatically displays all buffers when there's only one tab open
 let g:airline#extensions#tabline#enabled=1
@@ -152,19 +144,22 @@ set softtabstop=8
 set shiftwidth=8
 
 " Use spaces instead of tabs
-set expandtab
+" set expandtab
 " makes this vvvvvvvvvv unnecessary
 " Use spaces instead of tabs for assembly
 au BufEnter *.s set expandtab
 au BufEnter *.asm set expandtab
 
 " Building
-set makeprg=make\ -j9
+set makeprg=make\ -j8
 
 " Keybindings
-nmap <F4> :make<cr> 
+nmap <F4> :make<cr>
 nmap <F2> :TagbarToggle<cr>
 nmap <F1> :NERDTreeToggle<cr>
+nmap gn :bnext<cr>
+nmap gp :bprevious<cr>
+nmap gd :bdelete<cr>
 
 " set zathura as pdf viewer
 let g:vimtex_view_method='zathura'
@@ -174,12 +169,6 @@ let g:vimtex_view_method='zathura'
 
 " Enable mouse drag on window split
 set mouse=a
-
-" NeoDebug GDB
-let g:neodbg_keymap_toggle_console_win = '<F3>'
-let g:neodbg_debugger = 'gdb'
-let g:neodbg_gdb_path = 'usr/bin/riscv64-unknown-linux-gnu-gdb'
-let g:neodbg_openregisters_default = 1
 
 " Highlight 80th column
 set colorcolumn=80
