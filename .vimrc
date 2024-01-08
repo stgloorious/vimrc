@@ -55,6 +55,9 @@ Plug 'https://github.com/ludovicchabant/vim-gutentags'
 " wayland clipboard
 Plug 'https://github.com/jasonccox/vim-wayland-clipboard.git'
 
+" file finder
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+
 " Github copilot
 "Plug 'https://github.com/github/copilot.vim'
 
@@ -127,7 +130,7 @@ let g:ycm_confirm_extra_conf = 0
 
 " Automatically open Tagbar
 " This does not work reliably
-autocmd BufEnter,BufNewFile *.{cpp,c,h,hpp,v,tex,py} :Tagbar
+" autocmd BufEnter,BufNewFile *.{cpp,c,h,hpp,v,tex,py} :Tagbar
 
 "Automatically displays all buffers when there's only one tab open
 let g:airline#extensions#tabline#enabled=1
@@ -160,6 +163,7 @@ nmap <F1> :NERDTreeToggle<cr>
 nmap gn :bnext<cr>
 nmap gp :bprevious<cr>
 nmap gd :bdelete<cr>
+nmap <C-p> :CtrlP<cr>
 
 " set zathura as pdf viewer
 let g:vimtex_view_method='zathura'
